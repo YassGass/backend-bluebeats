@@ -12,10 +12,8 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 //connexion à mongodb
-mongoose.connect('localhost:27017', {
-  useNewUrlParser:true,
-  useUnifiedTopology:true
-}).then(() => console.log("connexion réussie"))
+mongoose.connect('mongodb://localhost:27017/blueBeats')
+  .then(() => console.log("connexion réussie"))
   .catch(()=> console.log("echec de la connexion"));
 
 // view engine setup
